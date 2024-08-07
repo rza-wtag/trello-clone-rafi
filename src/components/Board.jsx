@@ -13,11 +13,12 @@ function Board() {
     dispatch(fetchBoardData());
   }, [dispatch]);
 
-  const handleAddList = () => {
+  const handleAddList = async () => {
     if (listTitle.trim()) {
-      dispatch(addListToSupabase(listTitle));
+      await dispatch(addListToSupabase(listTitle));
       setListTitle("");
       setInputVisible(false);
+      dispatch(fetchBoardData());
     }
   };
 

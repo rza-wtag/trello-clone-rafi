@@ -21,7 +21,7 @@ function List({ list }) {
   };
 
   return (
-    <div className="list">
+    <div className={`list ${list.cards.length === 0 ? "empty-list" : ""}`}>
       <h3>{list.title}</h3>
       <div className="card-container">
         {list.cards.map((card) => (
