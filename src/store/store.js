@@ -5,6 +5,7 @@ import {
 } from "@reduxjs/toolkit";
 import { supabase } from "../supabaseClient";
 
+// Fetch board data
 export const fetchBoardData = createAsyncThunk(
   "board/fetchBoardData",
   async () => {
