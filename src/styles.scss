@@ -35,46 +35,46 @@
   .lists {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
-  }
-}
-
-.list {
-  background-color: $list-background-color;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  width: 300px;
-
-  h3 {
-    border-bottom: 1px solid $border-color;
-    color: $button-text-color;
-    font-weight: 700;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    flex-wrap: wrap;
   }
 
-  .card-container {
+  .list {
+    background-color: $list-background-color;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 20px;
+    width: calc(20% - 20px);
   }
 
-  .add-card {
-    background-color: $button-background-color;
-    border: none;
-    border-radius: 5px;
-    color: $button-text-color;
-    cursor: pointer;
-    padding: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  .list:nth-child(5n + 1) {
+    margin-left: 0;
+  }
 
-    &:hover {
-      background-color: lighten($button-background-color, 10%);
-    }
+  .list:nth-child(5n) {
+    margin-right: 0;
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-card {
+  background-color: $button-background-color;
+  border: none;
+  border-radius: 5px;
+  color: $button-text-color;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: lighten($button-background-color, 10%);
   }
 }
 
