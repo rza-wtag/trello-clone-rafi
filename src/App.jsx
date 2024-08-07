@@ -1,14 +1,12 @@
-import React from "react";
-import Header from "./components/Header";
-import supabase from "./supabaseClient";
+import Board from "./components/Board";
+import "./styles.scss";
 
-const App = () => {
-  console.log(supabase);
+function App() {
   return (
-    <div>
-      <Header />
+    <div className="App">
+      <Board />
     </div>
   );
-};
+}
 
 export default App;

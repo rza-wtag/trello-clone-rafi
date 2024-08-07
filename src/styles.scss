@@ -1,6 +1,110 @@
-$primary-color: #3498db;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import "./styles/variables.scss";
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: $primary-color;
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  align-items: flex-start;
+  background-color: $background-color;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.board {
+  background-color: lighten($background-color, 5%);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  padding: 20px;
+  width: 90%;
+
+  h2 {
+    color: $button-text-color;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .lists {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+  }
+}
+
+.card {
+  background-color: $card-background-color;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: $text-color;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.list {
+  background-color: $list-background-color;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 300px;
+
+  h3 {
+    border-bottom: 1px solid $border-color;
+    color: $button-text-color;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-card {
+    background-color: $button-background-color;
+    border: none;
+    border-radius: 5px;
+    color: $button-text-color;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: lighten($button-background-color, 10%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .board {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .list {
+    width: 100%;
+  }
+
+  .lists {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
