@@ -63,6 +63,35 @@
     gap: 10px;
   }
 
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .submit-card {
+    background-color: $button-background-color;
+    border: none;
+    border-radius: 5px;
+    color: $button-text-color;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: lighten($button-background-color, 10%);
+    }
+  }
+
   .add-card {
     background-color: $button-background-color;
     border: none;
