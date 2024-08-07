@@ -9,113 +9,113 @@
 }
 
 .App {
-  align-items: flex-start;
-  background-color: $background-color;
-  color: $text-color;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
   padding: 20px;
+  background-color: $background-color;
+  color: $text-color;
 }
 
 .board {
-  background-color: lighten($background-color, 5%);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
   max-width: 1200px;
   padding: 20px;
-  width: 90%;
+  border-radius: 10px;
+  background-color: lighten($background-color, 5%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   h2 {
-    color: $button-text-color;
-    font-weight: 700;
     margin-bottom: 20px;
+    font-weight: 700;
+    color: $button-text-color;
   }
 
   .lists {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
   }
 
   .list {
-    background-color: $list-background-color;
+    width: calc(20% - 20px);
+    padding: 20px;
     border-radius: 10px;
+    background-color: $list-background-color;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 20px;
-    width: calc(20% - 20px);
+
+    h3 {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-color;
+      font-weight: 700;
+      color: $button-text-color;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .add-card {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: $button-background-color;
+      color: $button-text-color;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: lighten($button-background-color, 10%);
+      }
+    }
   }
 
-  .list:nth-child(5n + 1) {
-    margin-left: 0;
-  }
+  .card {
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: $card-background-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: $text-color;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 
-  .list:nth-child(5n) {
-    margin-right: 0;
-  }
-}
+    &:hover {
+      transform: translateY(-2px);
+      background-color: lighten($card-background-color, 5%);
+    }
 
-.card-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    .card-title {
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
 
-.add-card {
-  background-color: $button-background-color;
-  border: none;
-  border-radius: 5px;
-  color: $button-text-color;
-  cursor: pointer;
-  padding: 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-
-  &:hover {
-    background-color: lighten($button-background-color, 10%);
-  }
-}
-
-.card {
-  background-color: $card-background-color;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: $text-color;
-  cursor: pointer;
-  margin-bottom: 10px;
-  padding: 15px;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    background-color: lighten($card-background-color, 5%);
-  }
-
-  .card-title {
-    font-weight: 700;
-    margin-bottom: 5px;
-  }
-
-  .card-description {
-    color: darken($text-color, 10%);
-    font-size: 0.9em;
+    .card-description {
+      font-size: 0.9em;
+      color: darken($text-color, 10%);
+    }
   }
 }
 
 @media (max-width: 768px) {
   .board {
+    width: 100%;
     padding: 10px;
-    width: 100%;
-  }
-
-  .list {
-    width: 100%;
   }
 
   .lists {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .list {
+    width: 100%;
   }
 }
