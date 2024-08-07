@@ -34,7 +34,7 @@ function List({ list }) {
             type="text"
             value={cardText}
             onChange={(e) => setCardText(e.target.value)}
-            placeholder="Enter card text"
+            placeholder="Enter a name for the card..."
             className="card-input"
           />
           <button className="submit-card" onClick={handleAddCard}>
