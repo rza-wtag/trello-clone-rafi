@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchBoardData, addCardToSupabase } from "../store/store";
+import { fetchBoardData } from "../store/store";
 
 function Board() {
   const lists = useSelector((state) => state.board.lists);
@@ -9,13 +9,6 @@ function Board() {
   useEffect(() => {
     dispatch(fetchBoardData());
   }, [dispatch]);
-
-  const handleAddCard = (listId) => {
-    const cardText = prompt("Enter card text");
-    if (cardText) {
-      dispatch(addCardToSupabase({ listId, cardText }));
-    }
-  };
 
   return (
     <div className="board">
@@ -31,9 +24,7 @@ function Board() {
                 </div>
               ))}
             </div>
-            <button className="add-card" onClick={() => handleAddCard(list.id)}>
-              Add Card
-            </button>
+            <button className="add-card">Add Card</button>
           </div>
         ))}
       </div>
