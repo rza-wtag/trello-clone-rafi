@@ -39,21 +39,6 @@
   }
 }
 
-.card {
-  background-color: $card-background-color;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: $text-color;
-  cursor: pointer;
-  margin-bottom: 10px;
-  padding: 15px;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-}
-
 .list {
   background-color: $list-background-color;
   border-radius: 10px;
@@ -90,6 +75,32 @@
     &:hover {
       background-color: lighten($button-background-color, 10%);
     }
+  }
+}
+
+.card {
+  background-color: $card-background-color;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: $text-color;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: lighten($card-background-color, 5%);
+  }
+
+  .card-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .card-description {
+    color: darken($text-color, 10%);
+    font-size: 0.9em;
   }
 }
 
