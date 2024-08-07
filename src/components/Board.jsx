@@ -15,7 +15,12 @@ function Board() {
       <h2>My Trello board</h2>
       <div className="lists">
         {lists.map((list) => (
-          <div key={list.id} className="list">
+          <div
+            key={list.id}
+            className={`list ${
+              list.cards.length === 0 ? "empty-list" : "non-empty-list"
+            }`}
+          >
             <h3>{list.title}</h3>
             <div className="card-container">
               {list.cards.map((card) => (

@@ -39,7 +39,7 @@
   }
 
   .list {
-    width: calc(20% - 20px);
+    width: 200px;
     padding: 20px;
     border-radius: 10px;
     background-color: $list-background-color;
@@ -47,38 +47,36 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: stretch;
+    justify-content: space-between;
+  }
 
-    h3 {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid $border-color;
-      font-weight: 700;
-      color: $button-text-color;
-    }
+  .list.empty-list {
+    height: 150px;
+  }
 
-    .card-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+  }
 
-    .add-card {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: $button-background-color;
-      color: $button-text-color;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+  .add-card {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: $button-background-color;
+    color: $button-text-color;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 
-      &:hover {
-        background-color: lighten($button-background-color, 10%);
-      }
+    &:hover {
+      background-color: lighten($button-background-color, 10%);
     }
   }
 
   .card {
-    margin-bottom: 10px;
     padding: 15px;
     border-radius: 5px;
     background-color: $card-background-color;
@@ -102,6 +100,43 @@
       color: darken($text-color, 10%);
     }
   }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-input {
+    padding: 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+  }
+
+  .submit-card {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: $button-background-color;
+    color: $button-text-color;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: lighten($button-background-color, 10%);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .lists {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -111,11 +146,66 @@
   }
 
   .lists {
-    flex-direction: column;
     gap: 10px;
   }
 
   .list {
     width: 100%;
+    min-height: 150px;
+  }
+
+  .card-container {
+    gap: 5px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .add-card {
+    padding: 5px;
+  }
+
+  .card-input {
+    padding: 5px;
+  }
+
+  .submit-card {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .board {
+    padding: 5px;
+  }
+
+  .lists {
+    gap: 5px;
+  }
+
+  .list {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card-container {
+    gap: 5px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .add-card {
+    padding: 4px;
+  }
+
+  .card-input {
+    padding: 4px;
+  }
+
+  .submit-card {
+    padding: 4px;
   }
 }
