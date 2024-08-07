@@ -5,6 +5,7 @@ import {
 } from "@reduxjs/toolkit";
 import { supabase } from "../supabaseClient";
 
+// Fetch board data
 export const fetchBoardData = createAsyncThunk(
   "board/fetchBoardData",
   async () => {
@@ -20,6 +21,7 @@ export const fetchBoardData = createAsyncThunk(
   }
 );
 
+// Add card to Supabase
 export const addCardToSupabase = createAsyncThunk(
   "board/addCardToSupabase",
   async ({ listId, cardText }) => {
@@ -45,6 +47,21 @@ export const addCardToSupabase = createAsyncThunk(
     }
 
     return { listId, newCard };
+  }
+);
+
+// Add list to Supabase
+export const addListToSupabase = createAsyncThunk(
+  "board/addListToSupabase",
+  async (listTitle) => {
+    const newList = { title: listTitle, cards: [] };
+    const { data, error } = await supabase.from("board").insert([newList]);
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    return data[0];
   }
 );
 
@@ -75,6 +92,9 @@ const boardSlice = createSlice({
         if (list) {
           list.cards.push(newCard);
         }
+      })
+      .addCase(addListToSupabase.fulfilled, (state, action) => {
+        state.lists.push(action.payload);
       });
   },
 });

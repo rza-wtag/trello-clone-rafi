@@ -32,7 +32,7 @@
 .board .lists {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
+  flex-wrap: wrap;
 }
 
 .list {
@@ -63,12 +63,11 @@
   gap: 10px;
 }
 .list .card-input {
-  width: 100%;
+  width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #555;
   border-radius: 5px;
-  background-color: #4c5564;
   font-size: 1rem;
 }
 .list .submit-card {
@@ -96,39 +95,37 @@
   background-color: #0663af;
 }
 
-.card {
-  background-color: #44546f;
-  border-radius: 5px;
+.add-list-container {
+  background-color: #232709;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  cursor: pointer;
-  margin-bottom: 10px;
-  padding: 15px;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-2px);
-  background-color: #4e607f;
-}
-.card .card-title {
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-.card .card-description {
-  color: #e6e6e6;
-  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 300px;
 }
 
-@media (max-width: 768px) {
-  .board {
-    padding: 10px;
-    width: 100%;
-  }
-  .list {
-    width: 100%;
-  }
-  .lists {
-    flex-direction: column;
-    gap: 10px;
-  }
+.list-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submit-list,
+.add-list {
+  background-color: #04477e;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.submit-list:hover,
+.add-list:hover {
+  background-color: #0663af;
 }/*# sourceMappingURL=styles.css.map */
