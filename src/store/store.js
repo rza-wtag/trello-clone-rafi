@@ -5,7 +5,6 @@ import {
 } from "@reduxjs/toolkit";
 import { supabase } from "../supabaseClient";
 
-// Fetch board data
 export const fetchBoardData = createAsyncThunk(
   "board/fetchBoardData",
   async () => {
@@ -13,9 +12,11 @@ export const fetchBoardData = createAsyncThunk(
     if (error) {
       throw new Error(error.message);
     }
-    return data.map((list) => ({
-      ...list,
-    }));
+    return data
+      .sort((a, b) => a.id - b.id)
+      .map((list) => ({
+        ...list,
+      }));
   }
 );
 
