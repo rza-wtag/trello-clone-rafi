@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #09326c;
+  color: #fff;
+}
+
+.board {
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #0b3d84;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.board h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+.board .lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.board .list {
+  width: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #101204;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.board .list.empty-list {
+  height: 150px;
+}
+.board .card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+.board .add-card {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #04477e;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.board .add-card:hover {
+  background-color: #0663af;
+}
+.board .card {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #44546f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.board .card:hover {
+  transform: translateY(-2px);
+  background-color: #4e607f;
+}
+.board .card .card-title {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.board .card .card-description {
+  font-size: 0.9em;
+  color: #e6e6e6;
+}
+.board .input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.board .card-input {
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+.board .submit-card {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #04477e;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.board .submit-card:hover {
+  background-color: #0663af;
+}
+
+@media (max-width: 1024px) {
+  .lists {
+    flex-direction: column;
+    align-items: center;
+  }
+  .list {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .board {
+    width: 100%;
+    padding: 10px;
+  }
+  .lists {
+    gap: 10px;
+  }
+  .list {
+    width: 100%;
+    min-height: 150px;
+  }
+  .card-container {
+    gap: 5px;
+  }
+  .card {
+    padding: 10px;
+  }
+  .add-card {
+    padding: 5px;
+  }
+  .card-input {
+    padding: 5px;
+  }
+  .submit-card {
+    padding: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .board {
+    padding: 5px;
+  }
+  .lists {
+    gap: 5px;
+  }
+  .list {
+    width: 100%;
+    padding: 10px;
+  }
+  .card-container {
+    gap: 5px;
+  }
+  .card {
+    padding: 8px;
+  }
+  .add-card {
+    padding: 4px;
+  }
+  .card-input {
+    padding: 4px;
+  }
+  .submit-card {
+    padding: 4px;
+  }
+}/*# sourceMappingURL=styles.css.map */
